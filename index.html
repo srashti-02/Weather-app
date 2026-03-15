@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Weather App</title>
+
+<link rel="stylesheet" href="css/styles.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1><i class="fa-solid fa-cloud-sun"></i> Global Weather</h1>
+
+<div class="search-box">
+
+<input id="cityInput" placeholder="Search city (Delhi, New York...)">
+
+<button onclick="getWeather()">
+<i class="fa fa-search"></i>
+</button>
+
+<button onclick="voiceSearch()">
+<i class="fa fa-microphone"></i>
+</button>
+
+<button onclick="getLocationWeather()">
+<i class="fa fa-location-dot"></i>
+</button>
+
+</div>
+
+<div class="weather-card">
+
+<img id="weatherIcon">
+
+<h2 id="city"></h2>
+
+<h1 id="temp"></h1>
+
+<p id="desc"></p>
+
+<div class="details">
+
+<div>
+<i class="fa-solid fa-droplet"></i>
+<p id="humidity"></p>
+<span>Humidity</span>
+</div>
+
+<div>
+<i class="fa-solid fa-wind"></i>
+<p id="wind"></p>
+<span>Wind</span>
+</div>
+
+</div>
+
+<div class="extra">
+
+<p>Feels Like: <span id="feels"></span></p>
+<p>Pressure: <span id="pressure"></span></p>
+<p>Visibility: <span id="visibility"></span></p>
+<p>Sunrise: <span id="sunrise"></span></p>
+<p>Sunset: <span id="sunset"></span></p>
+
+</div>
+
+</div>
+
+<h2>5 Day Forecast</h2>
+
+<div id="forecast" class="forecast"></div>
+
+<h2>Temperature Chart</h2>
+
+<canvas id="tempChart"></canvas>
+
+<h2>Search History</h2>
+
+<div id="history" class="history"></div>
+
+<p id="error"></p>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
