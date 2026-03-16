@@ -201,17 +201,21 @@ document.getElementById("cityInput").addEventListener("keypress",e=>{
 if(e.key==="Enter") getWeather();
 });
 
-if(weatherMain === "Rain"){
-document.querySelector(".rain").style.display="block";
-}else{
-document.querySelector(".rain").style.display="none";
+// Show/hide rain effect
+const weatherMain = weatherData.weather[0].main;
+if(document.querySelector(".rain")){
+	if(weatherMain === "Rain"){
+		document.querySelector(".rain").style.display = "block";
+	}else{
+		document.querySelector(".rain").style.display = "none";
+	}
 }
 
+// Adjust brightness for night icons
 const icon = weatherData.weather[0].icon;
-
 if(icon.includes("n")){
-document.body.style.filter="brightness(0.8)";
+	document.body.style.filter = "brightness(0.8)";
 }else{
-document.body.style.filter="brightness(1)";
+	document.body.style.filter = "brightness(1)";
 }
 
